@@ -1,12 +1,12 @@
-# 🦷 OdontoAPI — Sistema de Gestão Odontológica
+# OdontoAPI — Sistema de Gestão Odontológica
 
 API RESTful desenvolvida em **Java 21** com **Spring Boot 3** e **PostgreSQL** para o gerenciamento completo de **Pacientes** e **Consultas Odontológicas**.
 
 ---
 
-## ✨ Funcionalidades Principais
+## Funcionalidades Principais
 
-### 👤 Gestão de Pacientes (`/api/pacientes`)
+### Gestão de Pacientes (`/api/pacientes`)
 - **CRUD Completo**: Cadastro, listagem (com filtro por nome), busca por ID, busca por CPF, atualização e exclusão.
 - **Campos do Paciente**:
   - `nome` (obrigatório)
@@ -18,7 +18,7 @@ API RESTful desenvolvida em **Java 21** com **Spring Boot 3** e **PostgreSQL** p
   - `observacoes` (texto livre opcional)
   - `consultas` (lista com todo o **histórico de consultas** que o paciente já realizou ou possui agendadas)
 
-### 📅 Gestão de Consultas (`/api/consultas`)
+### Gestão de Consultas (`/api/consultas`)
 - **CRUD Completo**: Agendamento/registro, listagem (com filtros combináveis por paciente, data, status e tipo), busca por ID, histórico por paciente, atualização completa, atualização rápida de status e exclusão.
 - **Campos da Consulta**:
   - `paciente` (`pacienteId`) — vínculo com o paciente
@@ -31,7 +31,7 @@ API RESTful desenvolvida em **Java 21** com **Spring Boot 3** e **PostgreSQL** p
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Java 21**
 - **Spring Boot 3.3.5**
@@ -46,7 +46,7 @@ API RESTful desenvolvida em **Java 21** com **Spring Boot 3** e **PostgreSQL** p
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 OdontoAPI/
@@ -72,7 +72,7 @@ OdontoAPI/
 
 ---
 
-## 🚀 Passo a Passo para Executar o Projeto
+## Passo a Passo para Executar o Projeto
 
 ### 1. Pré-requisitos
 Certifique-se de ter instalado em sua máquina:
@@ -97,7 +97,7 @@ spring.datasource.username=${DB_USERNAME:postgres}
 spring.datasource.password=${DB_PASSWORD:postgres}
 ```
 
-> 💡 **Dica**: Você pode alterar o usuário e senha diretamente no `application.properties` ou definir as variáveis de ambiente `DB_URL`, `DB_USERNAME` e `DB_PASSWORD`. O Hibernate criará e atualizará as tabelas `pacientes` e `consultas` automaticamente (`spring.jpa.hibernate.ddl-auto=update`).
+> **Dica**: Você pode alterar o usuário e senha diretamente no `application.properties` ou definir as variáveis de ambiente `DB_URL`, `DB_USERNAME` e `DB_PASSWORD`. O Hibernate criará e atualizará as tabelas `pacientes` e `consultas` automaticamente (`spring.jpa.hibernate.ddl-auto=update`).
 
 ---
 
@@ -122,20 +122,20 @@ mvn test
 
 ---
 
-## 📖 Documentação Interativa (Swagger UI)
+## Documentação Interativa (Swagger UI)
 
 Com a aplicação rodando, você pode visualizar e testar todas as rotas diretamente pelo navegador através do **Swagger UI**:
 
 - **Swagger UI (Interface Interativa)**:  
-  👉 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+  [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 - **Especificação OpenAPI (JSON)**:  
-  👉 [http://localhost:8080/api-docs](http://localhost:8080/api-docs)
+  [http://localhost:8080/api-docs](http://localhost:8080/api-docs)
 
 ---
 
-## 🛣️ Guia Completo de Rotas da API
+## Guia Completo de Rotas da API
 
-### 1️⃣ Rotas de Pacientes (`/api/pacientes`)
+### Rotas de Pacientes (`/api/pacientes`)
 
 | Método | Rota | Descrição | Status de Sucesso |
 | :--- | :--- | :--- | :---: |
@@ -146,7 +146,7 @@ Com a aplicação rodando, você pode visualizar e testar todas as rotas diretam
 | `PUT` | `/api/pacientes/{id}` | Atualiza os dados de um paciente existente | `200 OK` |
 | `DELETE` | `/api/pacientes/{id}` | Exclui um paciente e suas consultas associadas | `204 No Content` |
 
-#### 📌 Exemplo: Cadastrar Paciente (`POST /api/pacientes`)
+#### Exemplo: Cadastrar Paciente (`POST /api/pacientes`)
 
 **Request Body (`application/json`):**
 ```json
@@ -175,7 +175,7 @@ Com a aplicação rodando, você pode visualizar e testar todas as rotas diretam
 }
 ```
 
-#### 📌 Exemplo: Buscar Paciente com Histórico de Consultas (`GET /api/pacientes/1`)
+#### Exemplo: Buscar Paciente com Histórico de Consultas (`GET /api/pacientes/1`)
 
 **Response (`200 OK`):**
 ```json
@@ -203,7 +203,7 @@ Com a aplicação rodando, você pode visualizar e testar todas as rotas diretam
 
 ---
 
-### 2️⃣ Rotas de Consultas (`/api/consultas`)
+### Rotas de Consultas (`/api/consultas`)
 
 | Método | Rota | Descrição | Status de Sucesso |
 | :--- | :--- | :--- | :---: |
@@ -215,7 +215,7 @@ Com a aplicação rodando, você pode visualizar e testar todas as rotas diretam
 | `PATCH` | `/api/consultas/{id}/status` | Atualiza apenas o status da consulta | `200 OK` |
 | `DELETE` | `/api/consultas/{id}` | Exclui uma consulta pelo ID | `204 No Content` |
 
-#### 📌 Exemplo: Criar Consulta (`POST /api/consultas`)
+#### Exemplo: Criar Consulta (`POST /api/consultas`)
 
 **Request Body (`application/json`):**
 ```json
@@ -244,7 +244,7 @@ Com a aplicação rodando, você pode visualizar e testar todas as rotas diretam
 }
 ```
 
-#### 📌 Exemplo: Atualizar Apenas o Status da Consulta (`PATCH /api/consultas/10/status`)
+#### Exemplo: Atualizar Apenas o Status da Consulta (`PATCH /api/consultas/10/status`)
 
 **Request Body (`application/json`):**
 ```json
@@ -268,7 +268,7 @@ Com a aplicação rodando, você pode visualizar e testar todas as rotas diretam
 }
 ```
 
-#### 📌 Exemplos de Filtros na Listagem de Consultas (`GET /api/consultas`)
+#### Exemplos de Filtros na Listagem de Consultas (`GET /api/consultas`)
 - Filtrar por data: `GET /api/consultas?data=2026-11-15`
 - Filtrar por status: `GET /api/consultas?status=AGENDADA`
 - Filtrar por tipo de consulta: `GET /api/consultas?tipoConsulta=Rotina`
@@ -276,7 +276,7 @@ Com a aplicação rodando, você pode visualizar e testar todas as rotas diretam
 
 ---
 
-## ⚠️ Padrão de Respostas de Erro
+## Padrão de Respostas de Erro
 
 A API utiliza o padrão **Problem Details for HTTP APIs (RFC 7807)** através do `GlobalExceptionHandler`:
 
